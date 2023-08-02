@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Notas</title>
+    <link rel="shortcut icon" href="img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/07f4d66adb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <body>
+        <main>
+            <header id="titlePage" class="border-bottom bg-light bg-light py-3">
+                <h1 id="textTitlePage" class="text-center mt-5 mb-5 ">Tus notas</h1>
+            </header>
+            <section>
+                <div id="contenidoNotas" class="contenido">
+                    <div id="ImpresionNotas" class="row">
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+
+        <!-- Modal para notas-->
+        <button onclick="emptyModal()" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#modal-notes" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;">
+            <span class="fa fa-plus"></span>
+        </button>
+
+        <div class="modal fade" id="modal-notes" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nueva nota</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="mb-3">
+                    <label for="title-name" class="col-form-label">Titulo:</label>
+                    <input type="text" class="form-control" id="title-name">
+                </div>
+                <div class="mb-3">
+                    <label for="content-text" class="col-form-label">Contenido de la nota:</label>
+                    <textarea class="form-control" id="content-text"></textarea>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="crearNota()">Guardar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="modal fade" id="modal-modify-notes" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar nota</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                    <div class="mb-3">
+                        <label for="title-name" class="col-form-label">Titulo:</label>
+                        <input type="text" class="form-control" id="title-name-mod">
+                    </div>
+                    <div class="mb-3">
+                        <label for="content-text" class="col-form-label">Contenido de la nota:</label>
+                        <textarea class="form-control" id="content-text-mod"></textarea>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="modificarNota()">Guardar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer bg-light py-5 text-center">
+            <div class="container">
+                <p class="text-muted content-footer">Sitio creado por Luis Ángel Calvillo León</p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="scripts/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    
+    </body>
+</body>
+</html>
